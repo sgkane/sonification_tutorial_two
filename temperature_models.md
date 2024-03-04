@@ -6,7 +6,7 @@ You might recall that there are two columns in our DataFrame called "delhi_temp_
 
 Again, if you are interested in how I made the csv, including the models, please do feel free to reach out to me and I can send you the Python script that I used.
 
-Now, there are some rigorous mathematical ways to test whether one model is a better fit to the data than another, and frankly, I reccommend looking into those if you are interested in doing serious modeling. However, in practice, many people using visualizations will simply evaluate models by visualizing the model and the real data together and seeing if they look similar. We will do something similar here by sonifying both the data from the Delhi daily temperatures and the two models predictions of Delhi's daily temperatures to decide which representation sounds more similar to the true data.
+Now, there are some rigorous mathematical ways to test whether one model is a better fit to the data than another, and frankly, I reccommend looking into those if you are interested in doing serious modeling. However, in practice, many people using visualizations will simply evaluate models by visualizing the model and the real data together and seeing if they look similar. We will do something similar here by sonifying both the data from the Delhi daily temperatures and the two models' predictions of Delhi's daily temperatures to decide which representation sounds more similar to the true data.
 
 ## Sonifying our Models
 
@@ -23,7 +23,6 @@ Let's sonify the first model:
 ~~~python
 soni_model1 = SoniSeries(tbl, time_col='timestep', val_col='delhi_temp_model_one')
 soni_model1.pitch_mapper.pitch_map_args["zero_point"] = 60
-soni_model1.note_spacing = 0.01
 soni_model1.sonify()
 soni_model1.play()
 ~~~
@@ -33,7 +32,6 @@ And we can sonify the second model with the exact same steps:
 ~~~python
 soni_model2 = SoniSeries(tbl, time_col='timestep', val_col='delhi_temp_model_two')
 soni_model2.pitch_mapper.pitch_map_args["zero_point"] = 60
-soni_model2.note_spacing = 0.01
 soni_model2.sonify()
 soni_model2.play()
 ~~~
