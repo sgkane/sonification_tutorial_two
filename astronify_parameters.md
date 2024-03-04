@@ -1,4 +1,5 @@
-Astronify’s Features
+# Astronify’s Features
+
 Astronify has a variety of parameters that allow the user to alter how the data is sonified. We will cover each of these parameters as we use Astronify in our code, but here is a written description for your convenience. Naturally, the best place to get the complete details regarding Astronify’s features is in the package’s [documentation]( https://astronify.readthedocs.io/en/latest/astronify/index.html), which I follow from quite closely here.
 - *pitch_array* is the range of pitches that can be mapped to the data in Hertz (inverse seconds), with the default being 100 Hertz to 10,000 Hertz.
 - The *zero_point* is the value of the data that is mapped to the “central” pitch, which is defined by the parameter *center_pitch*. By default zero_point is set to “median” and center_pitch to 440 Hertz, which means that the median value of the dataset will be sonified by a note with a pitch of 440 Hertz. center_pitch can be set to a float (decimal number) value that represents the pitch in Hertz, and the options for zero_point are “median” (for the median data value), “mean” (for the average value of the data), or a specific number that you choose that represents the value that will be mapped to the center_pitch.
