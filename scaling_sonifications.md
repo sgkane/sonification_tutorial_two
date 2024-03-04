@@ -11,7 +11,7 @@ soni_delhi = SoniSeries(tbl, time_col='timestep', val_col='delhi_temp')
 Next, change the note spacing to your personal preference (I'm making this one a bit faster to be consistent with the new note spacing we've set for the Philadelphia temperature sonification):
 
 ~~~python
-soni_delhi.note_spacing = 0.01
+soni_delhi.note_spacing = 0.008
 ~~~
 
 And finally, sonify and play the sonification!
@@ -21,13 +21,13 @@ soni_delhi.sonify()
 soni_delhi.play()
 ~~~
 
-Once again, I very clearly hear the cycles in temperature marking the changes in season. Let's play the Philadelphia temperature sonification to compare them side-by-side.
+Once again, I very clearly hear the cycles in temperature marking the changes in seasons. Let's play the Philadelphia temperature sonification to compare them side-by-side.
 
 ~~~python
 soni_philadelphia.play()
 ~~~
 
-They sound pretty similar to me! Now, I am no weather or climate expert, but I would certainly expect Delhi, India to be hotter than Philadelphia, Pennsylvania, but that isn't clear from the sonifications. I suggest that we go and check the data for the Delhi daily temperatures to confirm that they are generally hotter than those for Philadelphia.
+They sound pretty similar to me! Now, I am no weather or climate expert, but I would certainly expect Delhi, India to be hotter than Philadelphia, Pennsylvania, but that isn't clear from the sonifications, which represent higher temperatures as higher pitches. I suggest that we go and check the data for the Delhi daily temperatures to confirm that they are generally hotter than those for Philadelphia.
 
 When we go back and check the data, I'm going to use our DataFrame df rather than the Astropy Table tbl that we have been using for our sonifications because the syntax for Tables is slightly different than that for DataFrames, and there's really no need to learn the syntax for Astropy Tables unless you plan to be an astronomer! Both the DataFrame and Table contain the same data, anyway, so we should be able to use either.
 
