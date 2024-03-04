@@ -7,7 +7,6 @@ First, let's try sonifying the temperature data from New York City. Hopefully th
 
 ~~~python
 soni_nyc = SoniSeries(tbl, time_col='timestep', val_col='new_york_city_temp')
-soni_nyc.note_spacing = 0.05 # I'll make this sonification nice and slow so we can hear it
 soni_nyc.sonify()
 soni_nyc.play()
 ~~~
@@ -42,13 +41,13 @@ We can check if our data contains a NaN with Numpy's handy isnan() function:
 np.isnan(df.new_york_city_temp)
 ~~~
 
-You should get out an array of Booleans (True or False values) in the same shape as df.new_york_city_temp that are False at positions where df.new_york_city_temp does not contain a NaN and True at positions in the array where it does contain a NaN. In our case, you should get a bunch of False vbalues as output. Personally, I don't want to read through that whole array to check for any single True value, but we can easily check if there are any True values in an array with the .any() function:
+You should get out an array of Booleans (True or False values) in the same shape as df.new_york_city_temp that are False at positions where df.new_york_city_temp does not contain a NaN and True at positions in the array where it does contain a NaN. In our case, you should get a bunch of False values as output. Personally, I don't want to read through that whole array to check for any single True value, but we can easily check if there are any True values in an array with the .any() function:
 
 ~~~python
 np.isnan(df.new_york_city_temp).any()
 ~~~
 
-The .any() function will return a True if any values in an array are True (even if it's just one True in a thousand False values!) and False if there are no True values. In our case, you should get a return of False, which means that there are no NaNs in our dataset. All the the missing values seem to have been replaced with -99.0 rather than a NaN.
+The .any() function will return a True if any values in an array are True (even if it's just one True in a thousand False values!) and False if there are no True values. In our case, you should get a return of False, which means that there are no NaNs in our dataset. All of the missing values seem to have been replaced with -99.0 rather than a NaN.
 
 ## Dealing with Missing Values in the Sonification
 
